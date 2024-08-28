@@ -26,7 +26,7 @@ jobs:
 
       - name: Run MLflow tracking
         run: |
-          mlflow run . --no-conda
+          python run_mlflow.py
 
       - name: Deploy to Hugging Face
         run: |
