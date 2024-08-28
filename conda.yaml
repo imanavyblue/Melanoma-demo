@@ -7,4 +7,4 @@ dependencies:
   - pip:
     - mlflow
     - keras
-    - other-dependencies
+    - some-package==1.0.0  # แทนที่ 'other-dependencies' ด้วยแพ็กเกจที่ต้องการ
