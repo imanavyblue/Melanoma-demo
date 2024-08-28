@@ -1,12 +1,14 @@
 import my_mlflow_utils as mlflow_utils
-import mlflow.pyfunc
+import mlflow.keras
 
 def main():
-    # กำหนดพารามิเตอร์ที่ต้องการ
-    parameters = {"learning_rate": 0.0001}
-
-    # รันโปรเจกต์ MLflow โดยใช้พารามิเตอร์ที่กำหนด
-    mlflow.run(".", entry_point="main", parameters=parameters)
+    # สมมติว่าคุณมีโมเดลและค่าที่ต้องการ
+    model = ...  # โหลดหรือสร้างโมเดลที่นี่
+    loss = 0.05  # ค่า loss ที่ประเมินได้
+    accuracy = 0.95  # ค่า accuracy ที่ประเมินได้
+    
+    # บันทึกโมเดลและเมตริก
+    mlflow_utils.log_model_and_metrics(model, loss, accuracy)
 
 if __name__ == "__main__":
     main()
