@@ -1,5 +1,7 @@
-name: MyMLProject
+name: mlflow-project
 
 entry_points:
   main:
     command: "python mlflow.py"
+    environment:
+      python: python3
