@@ -1,4 +1,4 @@
-import mlflow
+import my_mlflow_utils as mlflow_utils
 import mlflow.keras
 
 def log_model_and_metrics(model, loss, accuracy):
