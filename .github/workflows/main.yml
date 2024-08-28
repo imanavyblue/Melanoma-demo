@@ -24,10 +24,20 @@ jobs:
           pip install -r requirements.txt
           pip install mlflow
 
+      - name: Install pyenv
+        run: |
+          curl https://pyenv.run | bash
+          echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> $GITHUB_ENV
+          echo 'eval "$(pyenv init --path)"' >> $GITHUB_ENV
+          echo 'eval "$(pyenv init -)"' >> $GITHUB_ENV
+          echo 'eval "$(pyenv virtualenv-init -)"' >> $GITHUB_ENV
+
       - name: Run MLflow tracking
         run: |
+          source $GITHUB_ENV
           mlflow run . 
 
       - name: Deploy to Hugging Face
         run: |
+          source $GITHUB_ENV
           python deploy.py
