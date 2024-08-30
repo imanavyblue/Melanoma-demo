@@ -87,8 +87,8 @@ def main():
     download_folder_from_google_drive(folder_url, destination)
 
     # กำหนดไดเรกทอรีข้อมูลการฝึกอบรมและ validation
-    train_dir = os.path.join(destination, 'train')
-    val_dir = os.path.join(destination, 'val')
+    train_dir = os.path.join(destination, 'train_data')
+    val_dir = os.path.join(destination, 'validation_data')
 
     # โหลดข้อมูล
     train_data, val_data = load_data(train_dir, val_dir)
